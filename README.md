@@ -2,7 +2,7 @@
    <h2>*The EGO Guessing game 1.3 *</h2>
      <p> --This can help beginners to practice defining functions, while loops, if statements, and use of the random module--
      <br> --This is a guessing game with two modes now--
-      <br--The user inputs the rounds they want play, the range and then starts guessing the number the  computer randomly picks from the range. When the round are done,            the game ends--
+      <br>--The user inputs the rounds they want play, the range and then starts guessing the number the  computer randomly picks from the range. When the round are done,the game ends--
       <br>--The computer mode allows users to test the computer while guessing their number--
       <br>--there is a key at the bottom of the code for anyone who wants to interprte the code--
       <br><u><b>To try out the game use the exe file or download here https://github.com/EGOproject/Learning_python-test_projects-/raw/main/EGO%20Guessing%20game.exe</b></p>

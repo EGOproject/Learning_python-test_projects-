@@ -16,3 +16,9 @@
       <br>--there is a key at the bottom of the code for anyone who wants to interprte the code--
       </p>
       <br><u><b>To try out the game use the exe file or download here https://github.com/EGOproject/Learning_python-test_projects-/raw/main/EGO%20RPS%20game.exe</b></p>
+   <h2> *The EGO Hangman game 1.1*</h2>
+      <p>--This can help beginners to practice importing self made libraries, (making lists and sets "as arrays"--
+      <br>--Users are require to guess a random word by spelling it out character by character.--
+      <br>--There is a limit of lives for invalid input and points are awarded to after the right spelling is guessed--
+      <br>--there is a key at the bottom of the code for anyone who wants to interprte the code--
+      </p>

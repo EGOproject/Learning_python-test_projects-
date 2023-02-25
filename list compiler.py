@@ -1,4 +1,4 @@
-# this is a list compiler program designed in python
+# this is a list compiler program designed in python using vsCode
 import time
 
 def lm():

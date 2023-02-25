@@ -31,8 +31,13 @@ def ctn():
             if choice == "y":
                 multiples()
             elif choice == "n":
-                print(f"\nYOU HAVE USED EMD [{tu}] times!!\n")
+                print(f"\nYOU HAVE USED EMD [{tu - 1}] times!!\n")
                 exit()
 
 ctn()
-                    
+"""
+    ntbm--number to be multiplied
+    mnom--maximum number of multiples
+    mn--multiple number
+    tu--times used
+"""              

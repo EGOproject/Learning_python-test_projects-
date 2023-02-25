@@ -5,10 +5,12 @@ def lm():
     ln = input("\nName the List: ").upper()
     mi = int(input("\nEnter number of items: "))
     il = []
+
     while len(il) < mi:
         ni = input(f"\nAdd new item to {ln} : ").upper()
         if ni not in il:
                 il.append(ni)
+                il.sort()
                 time.sleep(0.5)
                 print(f"\nList Count: [{len(il)}], Left with [{mi - len(il)}]")
                 print(", ".join(il))
@@ -42,7 +44,11 @@ def ctn():
             if choice == "y":
                 lm()
             elif choice == "n":
-                print(f"\nYOU HAVE USED LIST MAKER TO MAKE [{tu - 1}] LISTS!!\n")
-                exit()
+                if (tu - 1) > 1:
+                    print(f"\nYOU HAVE USED LIST MAKER TO MAKE [{tu - 1}] LISTS!!\n")
+                    break
+                elif (tu - 1) == 1:
+                    print(f"\nYOU HAVE USED LIST MAKER TO MAKE [{tu - 1}] LIST!!\n")
+                    break
 
 ctn()

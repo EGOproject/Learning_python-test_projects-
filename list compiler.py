@@ -126,4 +126,5 @@ def ctn():
                 elif (tu - 1) == 1:
                     print(f"\nYOU HAVE USED LIST MAKER TO MAKE [{tu - 1}] LIST!!\n")
                     break
+time.sleep(5)
 ctn()

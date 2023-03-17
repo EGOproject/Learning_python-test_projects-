@@ -38,12 +38,19 @@
       <p>--This is a continuation module that I have used in the practice projects above--
       <br>--THis can help leaners to practice how to creat modules and importing them--
       </p>
+
+   <h2> easy progress bar </h2>
+      <p>--this is a simple progress bar that can be applied and modified in any code basing on desired use--
+      <br>--Leaners can go ahead and interact more with the "tqdm" package as well as explore its various features and methods.</p>
+
+   <h2> CLI EGOcalc </h2>
+      <p>--this is a CLI calculator--
+      <br>learners can use this to learn about classes and how to import them from other python files.--
+      </p>
    
    <h2> slot machine </h2>
       <p>--This is being worked upon and anyone can contribute to this--
       <br>--Learners will use it to initiate object oriented programming as we shall be using classes and objects and many other things
       </p>
    
-   <h2> easy progress bar </h2>
-      <p>--this is a simple progress bar that can be applied and modified in any code basing on desired use--
-      <br>--Leaners can go ahead and interact more with the "tqdm" package as well as explore its various features and methods.</p>
+   

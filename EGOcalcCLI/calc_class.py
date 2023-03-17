@@ -2,8 +2,6 @@
 # credit: EGOproject
 
 import math
-
-
 class Calculations:
     def __init__(self, num, num1, num2):
         self.num1 = num1
@@ -37,6 +35,4 @@ class Calculations:
             c_root = math.cbrt(num2)
             return c_root
         else:
-            print("Wrong number of roots")
-
-        
+            print("Wrong number of roots")        

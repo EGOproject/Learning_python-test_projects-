@@ -2,9 +2,9 @@
 import main_calc
 
 class Continuation:
-    def __init__(self):
+    def __init__(self) -> None:
         pass
-
+    
     def ctn():
         tu = 0
         while tu >= 0:

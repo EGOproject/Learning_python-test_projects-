@@ -1,11 +1,10 @@
 from calc_class import Calculations
+from continuation import ctn
 
-print("\nWelcome to the CLI EGOcalc")
-print()
-
-num1 = int(input("First number: "))
-num2 = int(input("Second number: "))
-
-sum = Calculations.addition(num1, num2)
-
-print(sum)
+def calc():
+    functions = ["1.Addition", "2.Subtraction", "3.Multiplication", "4.Division", "5.Powers", "6.Roots"]
+    print("CHOOSE THE OPERATION YOU WOULD LIKE TO USE!!")
+    print("================================ ")
+    for operation in functions:
+        print(operation)
+    

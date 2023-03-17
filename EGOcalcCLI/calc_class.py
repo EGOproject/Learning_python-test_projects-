@@ -5,7 +5,7 @@ import math
 
 
 class Calculations:
-    def __init__(self, num1, num2):
+    def __init__(self, num, num1, num2):
         self.num1 = num1
         self.num2 = num2
 
@@ -30,11 +30,11 @@ class Calculations:
         return p_ans
 
     def roots(num1, num2):
-        if num2 == 2:
-            s_root = math.sqrt(num1)
+        if num1 == 2:
+            s_root = math.sqrt(num2)
             return s_root
-        elif num2 == 3:
-            c_root = math.cbrt
+        elif num1 == 3:
+            c_root = math.cbrt(num2)
             return c_root
         else:
             print("Wrong number of roots")

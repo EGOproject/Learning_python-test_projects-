@@ -1,10 +1,12 @@
 # my personalized continuation module
+import main_calc
 
 def ctn():
     tu = 0
     while tu >= 0:
         if tu == 0:
-            print("\nWELCOME TO ....... !!") # welcome to name of program
+            print("Welcome to CLI EGOcalc")
+            print("================================ ")# welcome to name of program
             # place the function of continuation here ie.... game()
             tu += 1
         else:

@@ -43,3 +43,7 @@
       <p>--This is being worked upon and anyone can contribute to this--
       <br>--Learners will use it to initiate object oriented programming as we shall be using classes and objects and many other things
       </p>
+   
+   <h2> easy progress bar </h2>
+      <p>--this is a simple progress bar that can be applied and modified in any code basing on desired use--
+      <br>--Leaners can go ahead and interact more with the "tqdm" package as well as explore its various features and methods.</p>

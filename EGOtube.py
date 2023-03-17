@@ -7,7 +7,7 @@ import time
 
 print("Welcome to EGOtube")
 print()
-link = input("Paste the link: ")
+link = str(input("Paste the link: "))
 
 eyt = YouTube(link)
 print()
@@ -17,9 +17,9 @@ print("Video Views: ", eyt.views)
 print()
 print("Downloading...")
 
-eyd = eyt.streams.get
+eyd = eyt.streams.get_highest_resolution()
 
-eyd.download("/users/public/downloads")
+eyd.download()
 
 print("Compiling Resources...")
 

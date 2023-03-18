@@ -43,7 +43,6 @@ command=lambda: button_click(1) = to pass a value from a button
 """
 can modify its appearance
 name.get() function grabs the input entered
-nmae.insert() function creates a place holder for the input
+name.insert() function creates a place holder for the input
 
 """
-

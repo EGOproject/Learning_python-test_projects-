@@ -3,6 +3,7 @@
 
 
 from tkinter import *
+import math
 
 root = Tk()
 root.title("GUI EGOcalc")
@@ -52,6 +53,46 @@ def button_share():
     num1 = int(first_number)
     calc_screen.delete(0, END)
 
+def button_square():
+    first_number = calc_screen.get()
+    global num1
+    global operation
+    operation = "square"
+    num1 = int(first_number)
+    calc_screen.delete(0, END)
+    sq = num1*num1
+    calc_screen.insert(0 , sq)
+
+def button_sroot():
+    first_number = calc_screen.get()
+    global num1
+    global operation
+    operation = "sroot"
+    num1 = int(first_number)
+    calc_screen.delete(0, END)
+    sqr = math.sqrt(num1)
+    calc_screen.insert(0 , int(sqr))
+
+def button_cube():
+    first_number = calc_screen.get()
+    global num1
+    global operation
+    operation = "cube"
+    num1 = int(first_number)
+    calc_screen.delete(0, END)
+    cb = num1*num1*num1
+    calc_screen.insert(0 , cb)
+
+def button_croot():
+    first_number = calc_screen.get()
+    global num1
+    global operation
+    operation = "croot"
+    num1 = int(first_number)
+    calc_screen.delete(0, END)
+    cbr = math.cbrt(num1)
+    calc_screen.insert(0 , int(cbr))
+
 def button_ans():
     second_number = calc_screen.get()
     calc_screen.delete(0, END)
@@ -84,7 +125,10 @@ button_9 = Button(root, text="9", bg="black", fg="white", padx=30, pady=15, comm
 button_0 = Button(root, text="0", bg="black", fg="white", padx=105, pady=15, command=lambda: button_click(0))
 
 #function Buttons
-button_dec = Button(root, text="•", bg="gray", fg="red", padx=30, pady=15, command=lambda: button_click())
+button_sq = Button(root, text="X²", bg="black", fg="yellow", padx=27, pady=15, command=button_square)
+button_sqr = Button(root, text="²√", bg="black", fg="red", padx=27, pady=15, command=button_sroot)
+button_cb = Button(root, text="X³", bg="black", fg="yellow", padx=27, pady=15, command=button_cube)
+button_cbr = Button(root, text="³√", bg="black", fg="red", padx=27, pady=15, command=button_croot)
 button_equ = Button(root, text="=", bg="green", fg="black", padx=30, pady=45, command=button_ans)
 button_add = Button(root, text="➕", bg="gray", fg="blue", padx=25, pady=45, command=button_plus)
 button_sub = Button(root, text="➖", bg="gray", fg="blue", padx=25, pady=15, command=button_minus)
@@ -93,26 +137,31 @@ button_div = Button(root, text="➗", bg="gray", fg="blue", padx=25, pady=15, co
 button_cls = Button(root, text="CLEAR", bg="red", fg="black", padx=15, pady=15, command=clear_screen)
 
 #posting them to GUI
-button_0.grid(row=5, columnspan=3, column=0)
+button_0.grid(row=6, columnspan=3, column=0)
 
-button_1.grid(row=4, column=0)
-button_2.grid(row=4, column=1)
-button_3.grid(row=4, column=2)
+button_1.grid(row=5, column=0)
+button_2.grid(row=5, column=1)
+button_3.grid(row=5, column=2)
 
-button_4.grid(row=3, column=0)
-button_5.grid(row=3, column=1)
-button_6.grid(row=3, column=2)
+button_4.grid(row=4, column=0)
+button_5.grid(row=4, column=1)
+button_6.grid(row=4, column=2)
 
-button_7.grid(row=2, column=0)
-button_8.grid(row=2, column=1)
-button_9.grid(row=2, column=2)
+button_7.grid(row=3, column=0)
+button_8.grid(row=3, column=1)
+button_9.grid(row=3, column=2)
 
-button_cls.grid(row=1, column=0)
-button_div.grid(row=1, column=1)
-button_mul.grid(row=1, column=2)
-button_sub.grid(row=1, column=3)
-button_add.grid(rowspan=2, row=2, column=3)
-button_equ.grid(rowspan=2, row=4, column=3)
+button_cls.grid(row=2, column=0)
+button_div.grid(row=2, column=1)
+button_mul.grid(row=2, column=2)
+button_sub.grid(row=2, column=3)
+button_add.grid(rowspan=2, row=3, column=3)
+button_equ.grid(rowspan=2, row=5, column=3)
+
+button_sq.grid(row=1, column=0)
+button_sqr.grid(row=1, column=1)
+button_cb.grid(row=1, column=2)
+button_cbr.grid(row=1, column=3)
 # button_dec.grid(row=5, column=2)
 
 root.mainloop()

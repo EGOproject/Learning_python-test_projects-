@@ -3,10 +3,13 @@
 
 
 from tkinter import *
+import tkinter.font as font
 import math
 
 root = Tk()
 root.title("GUI EGOcalc")
+
+myfont = font.Font(size = 20)
 
 calc_screen = Entry(root, width=40, borderwidth=5)
 calc_screen.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
@@ -125,16 +128,21 @@ button_9 = Button(root, text="9", bg="black", fg="white", padx=30, pady=15, comm
 button_0 = Button(root, text="0", bg="black", fg="white", padx=105, pady=15, command=lambda: button_click(0))
 
 #function Buttons
-button_sq = Button(root, text="X²", bg="black", fg="yellow", padx=27, pady=15, command=button_square)
-button_sqr = Button(root, text="²√", bg="black", fg="red", padx=27, pady=15, command=button_sroot)
-button_cb = Button(root, text="X³", bg="black", fg="yellow", padx=27, pady=15, command=button_cube)
-button_cbr = Button(root, text="³√", bg="black", fg="red", padx=27, pady=15, command=button_croot)
+button_sq = Button(root, text="∧2", bg="black", fg="yellow", padx=5, pady=5, command=button_square,)
+button_sqr = Button(root, text="∨2", bg="black", fg="yellow", padx=5, pady=5, command=button_sroot)
+button_cb = Button(root, text="∧3", bg="black", fg="yellow", padx=5, pady=5, command=button_cube)
+button_cbr = Button(root, text="∨3", bg="black", fg="yellow", padx=5, pady=5, command=button_croot)
 button_equ = Button(root, text="=", bg="green", fg="black", padx=30, pady=45, command=button_ans)
 button_add = Button(root, text="➕", bg="gray", fg="blue", padx=25, pady=45, command=button_plus)
 button_sub = Button(root, text="➖", bg="gray", fg="blue", padx=25, pady=15, command=button_minus)
 button_mul = Button(root, text="✖", bg="gray", fg="blue", padx=25, pady=15, command=button_times)
 button_div = Button(root, text="➗", bg="gray", fg="blue", padx=25, pady=15, command=button_share)
 button_cls = Button(root, text="CLEAR", bg="red", fg="black", padx=15, pady=15, command=clear_screen)
+
+button_sq["font"] = myfont
+button_sqr["font"] = myfont
+button_cb["font"] = myfont
+button_cbr["font"] = myfont
 
 #posting them to GUI
 button_0.grid(row=6, columnspan=3, column=0)

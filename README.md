@@ -50,9 +50,12 @@
    
    <h2> slot machine </h2>
       <p>--This is being worked upon and anyone can contribute to this--
-      <br>--Learners will use it to initiate object oriented programming as we shall be using classes and objects and many other things
+      <br>--Learners will use it to initiate object oriented programming as we shall be using classes and objects and many other things--
       </p>
       
-     TKINTER
+   <h2> Tkinter </h2>
+      <p>--Tkinter is a module in the python programming language that allows one to develope a python script of program with graphical user interface --
+      <br> Learners can use some of the documented scripsta to understand the basics of using tkinter while craeting GUIs for their python projects--
+      </p>
    
    

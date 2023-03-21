@@ -30,7 +30,7 @@ def button_plus():
     global num1
     global operation
     operation = "plus"
-    num1 = int(first_number)
+    num1 = float(first_number)
     calc_screen.delete(0, END)
 
 def button_minus():
@@ -38,7 +38,7 @@ def button_minus():
     global num1
     global operation
     operation = "minus"
-    num1 = int(first_number)
+    num1 = float(first_number)
     calc_screen.delete(0, END)
 
 def button_times():
@@ -46,7 +46,7 @@ def button_times():
     global num1
     global operation
     operation = "times"
-    num1 = int(first_number)
+    num1 = float(first_number)
     calc_screen.delete(0, END)
 
 def button_share():
@@ -54,7 +54,7 @@ def button_share():
     global num1
     global operation
     operation = "share"
-    num1 = int(first_number)
+    num1 = float(first_number)
     calc_screen.delete(0, END)
 
 def button_square():
@@ -62,7 +62,7 @@ def button_square():
     global num1
     global operation
     operation = "square"
-    num1 = int(first_number)
+    num1 = float(first_number)
     calc_screen.delete(0, END)
     sq = num1*num1
     calc_screen.insert(0 , sq)
@@ -72,17 +72,17 @@ def button_sroot():
     global num1
     global operation
     operation = "sroot"
-    num1 = int(first_number)
+    num1 = float(first_number)
     calc_screen.delete(0, END)
     sqr = math.sqrt(num1)
-    calc_screen.insert(0 , int(sqr))
+    calc_screen.insert(0 , float(sqr))
 
 def button_cube():
     first_number = calc_screen.get()
     global num1
     global operation
     operation = "cube"
-    num1 = int(first_number)
+    num1 = float(first_number)
     calc_screen.delete(0, END)
     cb = num1*num1*num1
     calc_screen.insert(0 , cb)
@@ -92,26 +92,26 @@ def button_croot():
     global num1
     global operation
     operation = "croot"
-    num1 = int(first_number)
+    num1 = float(first_number)
     calc_screen.delete(0, END)
     cbr = math.cbrt(num1)
-    calc_screen.insert(0 , int(cbr))
+    calc_screen.insert(0 , float(cbr))
 
 def button_ans():
     second_number = calc_screen.get()
     calc_screen.delete(0, END)
     if operation == "plus":
-        sum = num1 + int(second_number)
+        sum = num1 + float(second_number)
         calc_screen.insert(0 , sum)
     elif operation == "minus":
-        diff = num1 - int(second_number)
+        diff = num1 - float(second_number)
         calc_screen.insert(0 , diff)
     elif operation == "times":
-        prod = num1 * int(second_number)
+        prod = num1 * float(second_number)
         calc_screen.insert(0 , prod)
     elif operation == "share":
-        quo = num1 / int(second_number)
-        calc_screen.insert(0 , int(quo))
+        quo = num1 / float(second_number)
+        calc_screen.insert(0 , float(quo))
     
 
 

@@ -64,8 +64,10 @@ name.insert() function creates a place holder for the input
 """
 for icons
 ---root.iconbitmap("location of the image)
-"""
+for actual images
+---import  
 
+"""
 #buttons 2
 
 """

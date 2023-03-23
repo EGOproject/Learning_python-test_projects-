@@ -1,4 +1,3 @@
-@@ -1,38 +0,0 @@
 # Used to derive multiples of any number
 
 def multiples():

@@ -130,7 +130,7 @@ class modes:
     def moder (mode):
         if mode ==  "light":
             #number buttons
-            modeb = Button(root, text = "Dark Mode", bg="white", fg="black", command=darkmode)
+            modeb = Button(root, text = "Dark Mode", bg="black", fg="white", command=darkmode)
             button_1 = Button(root, text="1", bg="orangered", fg="white", padx=15, pady=5, command=lambda: button_click(1))
             button_2 = Button(root, text="2", bg="orangered", fg="white", padx=15, pady=5, command=lambda: button_click(2))
             button_3 = Button(root, text="3", bg="orangered", fg="white", padx=15, pady=5, command=lambda: button_click(3))

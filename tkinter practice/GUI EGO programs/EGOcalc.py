@@ -8,7 +8,7 @@ import math
 
 root = Tk()
 root.title("GUI EGOcalc")
-root.iconbitmap("tkinter practice/GUI EGOcalc/favicon/favicon.ico")
+root.iconbitmap("tkinter practice/GUI EGO programs/favicon/favicon.ico")
 
 myfont = font.Font(size = 20)
 

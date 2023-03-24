@@ -10,7 +10,7 @@ root = Tk()
 root.title("GUI EGOcalc")
 root.iconbitmap("tkinter practice/GUI EGO programs/favicon/favicon.ico")
 
-myfont = font.Font(size = 20)
+text_font = font.Font(size = 20)
 
 calc_screen = Entry(root, width=40, borderwidth=1)
 calc_screen.grid(row=1, column=0, columnspan=4, padx=10, pady=10)
@@ -158,26 +158,26 @@ class modes:
             button_quit = Button(root, text="Exit EGOcalc", command=root.quit, bg="maroon", fg="white", padx=100, pady=0,)
 
             #font size
-            button_sq["font"] = myfont
-            button_sqr["font"] = myfont
-            button_cb["font"] = myfont
-            button_cbr["font"] = myfont
-            button_div["font"] = myfont
-            button_mul["font"] = myfont
-            button_sub["font"] = myfont
-            button_add["font"] = myfont
-            button_cls["font"] = myfont
-            button_0["font"] = myfont
-            button_1["font"] = myfont
-            button_2["font"] = myfont
-            button_3["font"] = myfont
-            button_4["font"] = myfont
-            button_5["font"] = myfont
-            button_6["font"] = myfont
-            button_7["font"] = myfont
-            button_8["font"] = myfont
-            button_9["font"] = myfont
-            button_dec["font"] = myfont
+            button_sq["font"] = text_font
+            button_sqr["font"] = text_font
+            button_cb["font"] = text_font
+            button_cbr["font"] = text_font
+            button_div["font"] = text_font
+            button_mul["font"] = text_font
+            button_sub["font"] = text_font
+            button_add["font"] = text_font
+            button_cls["font"] = text_font
+            button_0["font"] = text_font
+            button_1["font"] = text_font
+            button_2["font"] = text_font
+            button_3["font"] = text_font
+            button_4["font"] = text_font
+            button_5["font"] = text_font
+            button_6["font"] = text_font
+            button_7["font"] = text_font
+            button_8["font"] = text_font
+            button_9["font"] = text_font
+            button_dec["font"] = text_font
 
             #posting them to GUI
             button_0.grid(row=7, columnspan=2, column=0)
@@ -240,26 +240,26 @@ class modes:
             button_quit = Button(root, text="Exit EGOcalc", command=root.quit, bg="black", fg="white", padx=100, pady=0,)
 
             #font size
-            button_sq["font"] = myfont
-            button_sqr["font"] = myfont
-            button_cb["font"] = myfont
-            button_cbr["font"] = myfont
-            button_div["font"] = myfont
-            button_mul["font"] = myfont
-            button_sub["font"] = myfont
-            button_add["font"] = myfont
-            button_cls["font"] = myfont
-            button_0["font"] = myfont
-            button_1["font"] = myfont
-            button_2["font"] = myfont
-            button_3["font"] = myfont
-            button_4["font"] = myfont
-            button_5["font"] = myfont
-            button_6["font"] = myfont
-            button_7["font"] = myfont
-            button_8["font"] = myfont
-            button_9["font"] = myfont
-            button_dec["font"] = myfont
+            button_sq["font"] = text_font
+            button_sqr["font"] = text_font
+            button_cb["font"] = text_font
+            button_cbr["font"] = text_font
+            button_div["font"] = text_font
+            button_mul["font"] = text_font
+            button_sub["font"] = text_font
+            button_add["font"] = text_font
+            button_cls["font"] = text_font
+            button_0["font"] = text_font
+            button_1["font"] = text_font
+            button_2["font"] = text_font
+            button_3["font"] = text_font
+            button_4["font"] = text_font
+            button_5["font"] = text_font
+            button_6["font"] = text_font
+            button_7["font"] = text_font
+            button_8["font"] = text_font
+            button_9["font"] = text_font
+            button_dec["font"] = text_font
 
             #posting them to GUI
             button_0.grid(row=7, columnspan=2, column=0)

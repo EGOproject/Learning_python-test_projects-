@@ -38,7 +38,7 @@ def ctn():
     tu = 0
     while tu >= 0:
         if tu == 0:
-            print("\nWELCOME TO EGO password Generator !!")
+            print("\nWELCOME TO EGO Password Generator !!")
             gen()
             tu += 1
         else:

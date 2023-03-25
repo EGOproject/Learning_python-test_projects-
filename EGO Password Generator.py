@@ -48,10 +48,6 @@ def ctn():
             while choice not in  a:
                 print("try again")
                 choice = input("CONTINUE ?\n[Y/N]?? : ").lower()
-                if choice == "y" or "n":
-                    break
-                else:
-                    exit()
             if choice == "y":
                 gen()
             elif choice == "n":

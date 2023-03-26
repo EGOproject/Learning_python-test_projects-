@@ -1,43 +1,17 @@
 from tkinter import *
-root = Tk()
+import tkinter
+r = Tk()
+age = "age"
+gage = 'vrum'
+r.title("getherefast")
 
-def darkmode():
-    mode = "dark"
-    modes.moder(mode)
+def gtc(dtxt):
+    r.withdraw()
+    r.clipboard_clear()
+    r.clipboard_append(dtxt)
+    r.update()
 
-def lightmode():
-    mode = "light"
-    modes.moder(mode)
+tkinter.Label(text='age', command=gtc(age)).grid(column=1, row=0)
+tkinter.Button(text='gage', command=gtc(gage)).grid(column=2, row=0)
 
-class modes:
-    def __init__(self, mode):
-        self.mode = mode
-    
-    def moder (mode):
-        if mode ==  "dark":
-            modeb = Button(root, text = "light mode", bg="white", fg="black", command=lightmode)
-            yes = Button(root, text = "YES", bg="black", fg="white")
-            no = Button(root, text = "NO", bg="black", fg="white")
-            exit = Button(root, text = "EXIT", bg="black", fg="white")
-            
-            modeb.grid(row=0,column=3)
-            yes.grid(row=1,column=0)
-            no.grid(row=1,column=2)
-            exit.grid(row=2,column=1)
-
-        elif mode == "light":
-            modeb = Button(root, text = "dark mode",bg="black", fg="white", command=darkmode)
-            yes = Button(root, text = "YES", bg="orange", fg="white")
-            no = Button(root, text = "NO", bg="orange", fg="white")
-            exit = Button(root, text = "EXIT", bg="maroon", fg="white")
-
-
-            modeb.grid(row=0,column=3)
-            yes.grid(row=1,column=0)
-            no.grid(row=1,column=2)
-            exit.grid(row=2,column=1)
-        else:
-            pass
-
-lightmode()
-root.mainloop()
+r.mainloop()

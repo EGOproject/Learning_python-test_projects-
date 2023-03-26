@@ -27,7 +27,7 @@ def lightmode():
 def button_click(number):
     current = calc_screen.get()
     calc_screen.delete(0, END)
-    calc_screen.insert(0, str(current) + str(number))
+    calc_screen.insert(0,str(current) + str(number))
 
 def clear_screen():
     calc_screen.delete(0, END)

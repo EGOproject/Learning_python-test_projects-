@@ -9,7 +9,7 @@ import math
 root = Tk()
 root.title("GUI EGOcalc")
 root.iconbitmap("tkinter practice/GUI EGO programs/favicon/favicon.ico")
-
+root.geometry("276x452")
 text_font = font.Font(size = 20)
 
 calc_screen = Entry(root, width=40, borderwidth=1)

@@ -1,6 +1,11 @@
+#credit:codemy.com for these lectures 
 from tkinter import *
 import tkinter.font as font
 from PIL import ImageTk, Image
+from tkinter import messagebox
+from tkinter import filedialog
+
+"""
 
 root = Tk()
 root.title("Simple Greeter")
@@ -18,7 +23,11 @@ box = Label(text= "anchor", bd=1, relief=SUNKEN, anchor=E)
 
 pic = ImageTk.PhotoImage(Image.open("tkinter practice/favicon/android-chrome-512x512.png"))
 pic_label = Label(image=pic)
-number = 0
+def popup():
+    messagebox.askyesnocancel("title of messagebox", "mesaage inside message box")
+
+Button(root, text="popup", command=popup).pack()
+
 def onclick(number):
     number += 1
     myLabel = Label(root, text="Hello " + name.get() + f" 😁 {number}")
@@ -31,15 +40,26 @@ def onclick(number):
 my_button = Button(root, text="Greet", command=lambda: onclick(0), padx=10, pady = 1, fg="white", bg="black")
 my_button["font"] = my_font
 my_button.pack()
-box.grid(row=0, column=0, sticky=W+E)
+# box.grid(row=0, column=0, sticky=W+E)
 
 exit_button = Button(text="Exit", command=root.quit)
 exit_button.pack()
 
 
 root.mainloop()
+radio=Tk()
+radio.title("radio buttons")
+radio.iconbitmap("tkinter practice/favicon/favicon.ico")
+
+r = IntVar()
+r.set("1")
 
 
+Radiobutton(radio, text="option 1", variable=r, value=1).pack()
+Radiobutton(radio, text="option 2", variable=r, value=2).pack()
+
+radio.mainloop()
+"""
 #to use tkinter one should inport all its functions or methods
 # every 
 
@@ -48,6 +68,20 @@ root.mainloop()
 #title -- title widget
 """
 root.title("actual title) names window title
+"""
+#grid vs pack
+"""
+---only one can be used at a time except when using frames.
+---and also in flames one can be used at a time
+---grid uses rows and columns while pack just packs the ocject in the particular space at that time.
+pack example
+    exit_button = Button(text="Exit", command=root.quit)
+    exit_button.pack()
+    orexit_button = Button(text="Exit", command=root.quit).pack()
+grid example
+    exit_button = Button(text="Exit", command=root.quit)
+    exit_button.grid(row=1, column=1)
+    orexit_button = Button(text="Exit", command=root.quit).grid(row=1, column=1)
 """
 
 #buttons--- button widget
@@ -118,4 +152,89 @@ for the exit button
 """
 frames =LabelFrame=(text="comment section", padx=1, pady=1)#this is the  space inside the frame
 frame.pack(padx=1, pady=1)#this is the space arouns the frames
+---the tect section can be ignored when not needed
 """
+
+#radio buttons
+"""
+r = IntVar() declare as integer variable
+r.set("1") #to set the default
+Radiobutton(root,text="option 1", variable=r, value=1).pack() 
+"""
+
+#message boxes
+#tyupes of messageboxes
+    #showinfo, showwarning, showerror, askquestion, askokcancel, askyesno, askyesnocancel
+"""
+from tkinter import messagebox
+
+def popup():
+    messagebox.showinfo("title of messagebox", "mesaageinside message box")
+
+button(root, text="popup", command=popup).pack()
+--- to get results
+    Label(root,text=response).pack()
+"""
+
+
+#create new window
+"""
+first = Tk()
+first.title("first window")
+first.iconbitmap("tkinter practice/favicon/favicon.ico")
+
+second = Tk()
+second.title("second window")
+second.iconbitmap("tkinter practice/favicon/favicon.ico")
+Button(second, text="exit", command=second.destroy).pack()
+#destroy only exits current window
+first.mainloop()
+"""
+
+#create a file opening dialogue box
+"""
+root = Tk()
+root.title("root window")
+root.iconbitmap("tkinter practice/favicon/favicon.ico")
+# from tkinter import filedialog
+root.filename = filedialog.askopenfile(initialdir="G:\EGO archive\PYTHON\PRACTICE\practice\Learning_python-test_projects-\Learning_python-test_projects-\tkinter practice", title="open the file", filetypes=(("png files", "*.png"),("Icon files", "*.ico"),("All files", "*.*")))
+fname = Label(root, text=root.filename).pack()
+selected_image = ImageTk.PhotoImage(Image.open(root.filename))
+img_label = Label(image=selected_image).pack()
+
+root.mainloop()
+"""
+
+#navigation slider
+"""
+root = Tk()
+root.title("slider ")
+root.iconbitmap("tkinter practice/favicon/favicon.ico")
+
+def slide(var):
+    root.geometry(str(horizontal.get())+ "x" + str(vertical.get()))
+
+
+vertical = Scale(root, from_=0, to=700, orient=VERTICAL, command = slide)
+vertical.set(400)
+vertical.pack()
+horizontal= Scale(root, from_=0, to=600, orient=HORIZONTAL, command = slide)
+horizontal.set(400)
+horizontal.pack() 
+
+root.mainloop()
+"""
+
+# check boxes
+root = Tk()
+root.title("slider ")
+root.iconbitmap("tkinter practice/favicon/favicon.ico")
+
+
+def show():
+    label = Label(root, text=var.get()).pack()
+var = StringVar()
+check1 = Checkbutton(root, text="record steps", variable=var, onvalue="on", offvalue="off").pack()
+Button(root, text="Recorder switch", command= show).pack()
+check1.diselect()
+root.mainloop()

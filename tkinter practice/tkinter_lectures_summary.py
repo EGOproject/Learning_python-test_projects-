@@ -258,6 +258,7 @@ root.mainloop()
 """
 
 #using databases in python ---python SQL database
+"""................................................................................."""
 #import sqlite3
 root = Tk()
 root.title("databases ")
@@ -310,6 +311,125 @@ def submit():
     zipcode_entry.delete(0, END)
     # comment_entry.delete(0, END)
 
+def show_querry():
+    conn = sqlite3.connect("addressbook.db")
+    c = conn.cursor()
+
+    #querry the database
+    c.execute("SELECT *,oid FROM people")
+    # c.fetchone
+    # c.fetchmany
+    records=  c.fetchall()
+
+    print_records=""
+    for record in records:
+        print_records += str(record[6]) + " " + str(record[0]) + " " + str(record[1]) + " " + str(record[2]) + " " + str(record[3]) + " " + str(record[4]) + " " + str(record[5]) + " " +"\n"
+    
+    rlabel = Label (root, text=print_records).grid(row=9, columnspan=2, column=0)
+        
+    conn.commit()
+    conn.close()
+
+def delete_record():
+    conn = sqlite3.connect("addressbook.db")
+    c = conn.cursor()
+
+    #delete Record
+    c.execute("DELETE FROM people WHERE oid=" + select_entry.get())
+
+    conn.commit()
+    conn.close()
+
+def save_update():
+    conn = sqlite3.connect("addressbook.db")
+    c = conn.cursor()
+
+    record_id =select_entry.get()
+    c.execute("""UPDATE people SET VALUES(:f_name, :l_name, :address, :city, :state, :zipcode)",
+           first_name = :first,
+           last_name = :last,
+           address = :address,
+           city = :city,
+           state = :state,
+           zipcode = :zipcode
+            
+           WHERE oid = :oid""",
+           {
+            "first": f_name_entry_update.get(),
+            "last": l_name_entry_update.get(),
+            "address": address_entry_update.get(),
+            "city": city_entry_update.get(),
+            "state": state_entry_update.get(),
+            "zipcode": zipcode_entry_update.get,
+
+            "oid": record_id
+           })
+
+    conn.commit()
+    conn.close()
+    edit.destroy
+
+def update_record():
+    global edit
+    edit = Tk()
+    edit.title("EDIT record ")
+    edit.iconbitmap("tkinter practice/favicon/favicon.ico")
+
+    conn = sqlite3.connect("addressbook.db")
+    c = conn.cursor()
+
+    record_id = select_entry.get()
+    #querry the database
+    c.execute("SELECT *,oid FROM people WHERE oid =" + record_id)
+    # c.fetchone
+    # c.fetchmany
+    records=  c.fetchall()
+
+
+    f_name_label_update = Label(edit, text="First Name:").grid(row=0, column=0)
+    global f_name_entry_update
+    f_name_entry_update = Entry(edit, width=30)
+    f_name_entry_update.grid(row=0, column=1)
+
+    global l_name_entry_update
+    l_name_label_update = Label(edit, text="Last Name:").grid(row=1, column=0)
+    l_name_entry_update = Entry(edit, width=30)
+    l_name_entry_update.grid(row=1, column=1)
+
+    global address_entry_update
+    address_label_update = Label(edit, text="Address:").grid(row=2, column=0)
+    address_entry_update = Entry(edit, width=30)
+    address_entry_update.grid(row=2, column=1)
+
+    global city_entry_update
+    city_label_update = Label(edit, text="City:").grid(row=3, column=0)
+    city_entry_update = Entry(edit, width=30)
+    city_entry_update.grid(row=3, column=1)
+
+    global state_entry_update
+    state_label_update = Label(edit, text="State:").grid(row=4, column=0)
+    state_entry_update= Entry(edit, width=30)
+    state_entry_update.grid(row=4, column=1)
+
+    global zipcode_entry_update
+    zipcode_label_update = Label(edit, text="Zip Code:").grid(row=5, column=0)
+    zipcode_entry_update = Entry(edit, width=30)
+    zipcode_entry_update.grid(row=5, column=1)
+
+    Button(edit, text="Save", command=save_update).grid(row=6, column=0, columnspan=2, ipadx=100)
+
+    #loop through results
+    for record in records:
+        f_name_entry_update.insert(0, record[0])
+        l_name_entry_update.insert(0, record[1])
+        address_entry_update.insert(0, record[2])
+        city_entry_update.insert(0, record[3])
+        state_entry_update.insert(0, record[4])
+        zipcode_entry_update.insert(0, record[5])
+    conn.commit()
+    conn.close()
+
+
 f_name_label = Label(root, text="First Name:").grid(row=0, column=0)
 f_name_entry = Entry(root, width=30)
 f_name_entry.grid(row=0, column=1)
@@ -334,11 +454,24 @@ zipcode_label = Label(root, text="Zip Code:").grid(row=5, column=0)
 zipcode_entry = Entry(root, width=30)
 zipcode_entry.grid(row=5, column=1)
 
-# comment_label = Label(root, text="Comment:").grid(row=6, column=0)
-# comment_entry = Entry(root, width=30,)
-# comment_entry.grid(row=6, column=1)
+delete_label = Label(root, text="Select ID:").grid(row=10, column=0)
+select_entry = Entry(root, width=30)
+select_entry.grid(row=10, column=1)
+Button(root, text="Delete Record", command= delete_record).grid(row=11,column=0,columnspan=2)
+Button(root, text="Update Record", command= update_record).grid(row=12,column=0,columnspan=2)
+# update_label = Label(root, text="Select record by ID:").grid(row=12, column=0)
+# select_entry = Entry(root, width=30,)
+# select_entry.grid(row=12, column=1)
+
+# Button(root, text="Select Record", command= update_record).grid(row=13,column=0,columnspan=2)
+# Button(root, text="Update Record", command= update_record, pady=(10)).grid(row=14,column=0,columnspan=2)
  
 Button(root, text="Add Record", command = submit).grid(row=7, column=0, columnspan=2, padx=10, pady=10, ipadx=100)
+
+#create a querry button
+querry_btn = Button(root, text="Show Record", command = show_querry).grid(row=8, column=0, columnspan=2, pady=10)
+
+
 #commit changes
 conn.commit()
 

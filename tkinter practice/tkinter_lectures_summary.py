@@ -4,6 +4,7 @@ import tkinter.font as font
 from PIL import ImageTk, Image
 from tkinter import messagebox
 from tkinter import filedialog
+import sqlite3
 
 """
 
@@ -228,7 +229,7 @@ root.mainloop()
 # check boxes
 """
 root = Tk()
-root.title("slider ")
+root.title("checkboxes ")
 root.iconbitmap("tkinter practice/favicon/favicon.ico")
 
 
@@ -242,8 +243,9 @@ root.mainloop()
 """
 
 #menu dropdown
+"""
 root = Tk()
-root.title("slider ")
+root.title("menu dropdown ")
 root.iconbitmap("tkinter practice/favicon/favicon.ico")
 
 options = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
@@ -251,5 +253,96 @@ clicked = StringVar()
 clicked.set(options[4])
 
 drop = OptionMenu(root, clicked, *options).pack()
+
+root.mainloop()
+"""
+
+#using databases in python ---python SQL database
+#import sqlite3
+root = Tk()
+root.title("databases ")
+root.iconbitmap("tkinter practice/favicon/favicon.ico")
+
+#Create a database or connect one
+conn = sqlite3.connect("addressbook.db")
+
+#create cursor
+c = conn.cursor()
+
+# create table
+'''
+c.execute("""CREATE TABLE people(
+        first_name text,
+        last_name text,
+        address text,
+        city text,
+        state text,
+        zipcode integer
+        
+        )""")
+'''
+def submit():
+    conn = sqlite3.connect("addressbook.db")
+    c = conn.cursor()
+
+    c.execute("INSERT INTO people VALUES(:f_name, :l_name, :address, :city, :state, :zipcode)",
+              {
+                "f_name": f_name_entry.get(),
+                "l_name": l_name_entry.get(),
+                "address": address_entry.get(),
+                "city": city_entry.get(),
+                "state": state_entry.get(),
+                "zipcode": zipcode_entry.get(),
+                # "comment": comment_entry.get
+              })
+
+    conn.commit()
+    conn.close()
+
+
+
+
+    f_name_entry.delete(0, END)
+    l_name_entry.delete(0, END)
+    address_entry.delete(0, END)
+    city_entry.delete(0, END)
+    state_entry.delete(0, END)
+    zipcode_entry.delete(0, END)
+    # comment_entry.delete(0, END)
+
+f_name_label = Label(root, text="First Name:").grid(row=0, column=0)
+f_name_entry = Entry(root, width=30)
+f_name_entry.grid(row=0, column=1)
+
+l_name_label = Label(root, text="Last Name:").grid(row=1, column=0)
+l_name_entry = Entry(root, width=30)
+l_name_entry.grid(row=1, column=1)
+
+address_label = Label(root, text="Address:").grid(row=2, column=0)
+address_entry = Entry(root, width=30)
+address_entry.grid(row=2, column=1)
+
+city_label = Label(root, text="City:").grid(row=3, column=0)
+city_entry = Entry(root, width=30)
+city_entry.grid(row=3, column=1)
+
+state_label = Label(root, text="State:").grid(row=4, column=0)
+state_entry = Entry(root, width=30)
+state_entry.grid(row=4, column=1)
+
+zipcode_label = Label(root, text="Zip Code:").grid(row=5, column=0)
+zipcode_entry = Entry(root, width=30)
+zipcode_entry.grid(row=5, column=1)
+
+# comment_label = Label(root, text="Comment:").grid(row=6, column=0)
+# comment_entry = Entry(root, width=30,)
+# comment_entry.grid(row=6, column=1)
+ 
+Button(root, text="Add Record", command = submit).grid(row=7, column=0, columnspan=2, padx=10, pady=10, ipadx=100)
+#commit changes
+conn.commit()
+
+#close connection
+conn.close()
 
 root.mainloop()

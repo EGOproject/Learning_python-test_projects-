@@ -226,6 +226,7 @@ root.mainloop()
 """
 
 # check boxes
+"""
 root = Tk()
 root.title("slider ")
 root.iconbitmap("tkinter practice/favicon/favicon.ico")
@@ -236,5 +237,19 @@ def show():
 var = StringVar()
 check1 = Checkbutton(root, text="record steps", variable=var, onvalue="on", offvalue="off").pack()
 Button(root, text="Recorder switch", command= show).pack()
-check1.diselect()
+#check1.diselect() to remove auto select
+root.mainloop()
+"""
+
+#menu dropdown
+root = Tk()
+root.title("slider ")
+root.iconbitmap("tkinter practice/favicon/favicon.ico")
+
+options = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+clicked = StringVar() 
+clicked.set(options[4])
+
+drop = OptionMenu(root, clicked, *options).pack()
+
 root.mainloop()

@@ -13,6 +13,7 @@ root.iconbitmap("tkinter practice/favicon/favicon.ico")
 
 def select():
     color = colorchooser.askcolor()
+    
     #rgb alogarithm
     rgb = []
     for value in color:
@@ -25,15 +26,17 @@ def select():
     color_hex = color[1]
     hex_screen.delete(0, END)
     hex_screen.insert(0, color_hex)
+
+    root.config(bg=color_hex)
     
 def copy_rgb_values():
-    text = "rgb_screen.get()"
-    copy = 'echo' + text.strip() + '| clip'
+    text = f"{rgb_screen.get()}"
+    copy = 'echo ' + text.strip() + '| clip'
     os.system(copy)
 
 def copy_hex_values():
-    text = "hex_screen.get()"
-    copy = 'echo' + text.strip() + '| clip'
+    text = f"{hex_screen.get()}"
+    copy = 'echo ' + text.strip() + '| clip'
     os.system(copy)
     
 

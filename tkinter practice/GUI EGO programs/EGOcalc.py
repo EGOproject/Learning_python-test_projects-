@@ -12,6 +12,7 @@ root.iconbitmap("tkinter practice/GUI EGO programs/favicon/favicon.ico")
 root.geometry("276x452")
 text_font = font.Font(size = 20)
 
+
 calc_screen = Entry(root, width=40, borderwidth=1)
 calc_screen.grid(row=1, column=0, columnspan=4, padx=10, pady=10)
 
@@ -129,6 +130,7 @@ class modes:
     
     def moder (mode):
         if mode ==  "light":
+            root.config(background="cyan")
             #number buttons
             modeb = Button(root, text = "Dark Mode", bg="black", fg="white", command=darkmode)
             button_1 = Button(root, text="1", bg="orangered", fg="white", padx=15, pady=5, command=lambda: button_click(1))

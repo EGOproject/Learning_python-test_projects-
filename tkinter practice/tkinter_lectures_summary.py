@@ -107,6 +107,7 @@ import tkinter.font as font
 can modify its appearance
 name.get() function grabs the input entered
 name.insert() function creates a place holder for the input
+name.delete(0, END)
 
 """
 

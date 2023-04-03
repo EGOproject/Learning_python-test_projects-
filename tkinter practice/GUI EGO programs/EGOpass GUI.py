@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter.font import  Font
-import pyperclip
+import os
 import random
 
 root= Tk()
@@ -26,9 +26,10 @@ def generate():
     pss = "".join(password)
     gps_screen.insert(0, pss )
 
-def copy():
-    ctext = gps_screen.get()
-    clip_text = ctext.selection_get()
+def copy_password():
+    text = f"{gps_screen.get()}"
+    copy = 'echo ' + text.strip() + '| clip'
+    os.system(copy)
     
 
 head_label = Label(root, text="Password Requirements!")
@@ -38,7 +39,7 @@ plen_screen = Entry(root, text="8", width=20, borderwidth=1)
 gps_screen = Entry(root, width=50, borderwidth=5)
 gen_btn = Button(root, text="Generate Password", padx=5, pady=5, bg="black", fg="white", command=generate)
 space = Label(root, text="=================================================")
-copy = Button(root, text="Copy", padx=10, pady=5,bg="black", fg="white")
+copy = Button(root, text="Copy", command = copy_password, padx=10, pady=5,bg="black", fg="white")
 
 head_label.grid(column=0, row=0, columnspan=5)
 plen_label.grid(column=2, row=2)

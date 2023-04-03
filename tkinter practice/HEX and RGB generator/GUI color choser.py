@@ -7,8 +7,8 @@ from tkinter import colorchooser
 import os
 
 root = Tk()
-root.title("GUI color selector")
-root.iconbitmap("tkinter practice/favicon/favicon.ico")
+root.title("HEX and RGB generator")
+root.iconbitmap("tkinter practice/HEX and RGB generator/favicon.ico")
 # root.geometry("300x300")
 
 def select():

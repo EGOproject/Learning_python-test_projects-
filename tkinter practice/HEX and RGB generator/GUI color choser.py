@@ -33,12 +33,13 @@ def copy_rgb_values():
     text = f"{rgb_screen.get()}"
     copy = 'echo ' + text.strip() + '| clip'
     os.system(copy)
+    root.destroy()
 
 def copy_hex_values():
     text = f"{hex_screen.get()}"
     copy = 'echo ' + text.strip() + '| clip'
     os.system(copy)
-    
+    root.destroy()
 
 header_label = Label(root, text="Hex and RGB Generator", bg="white", fg="black").grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 

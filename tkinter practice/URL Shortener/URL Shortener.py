@@ -8,6 +8,7 @@ root.title("Link Shortener")
 root.iconbitmap("tkinter practice/URL Shortener/favicon.ico")
 # root.geometry("400x200") 
 root.config(background="#7397ce")
+root.resizable(False,False)
 text_font = Font(size = 15)
 
 url = StringVar()

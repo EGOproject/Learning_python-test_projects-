@@ -10,6 +10,7 @@ root = Tk()
 root.title("HEX and RGB generator")
 root.iconbitmap("tkinter practice/HEX and RGB generator/favicon.ico")
 # root.geometry("300x300")
+root.resizable(False,False)
 
 def select():
     color = colorchooser.askcolor()

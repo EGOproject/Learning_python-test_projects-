@@ -11,6 +11,7 @@ root = Tk()
 root.title("QRcode Generator")
 root.iconbitmap("tkinter practice/QRcode Generator/favicon.ico")
 root.config(background="#267573")
+root.resizable(False,False)
 
 def clear():
     content_screen.delete(0, END)

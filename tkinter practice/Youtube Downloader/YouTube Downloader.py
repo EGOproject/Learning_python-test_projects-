@@ -1,8 +1,11 @@
 from pytube import YouTube
 from tkinter import *
-import os
+import tkxui
 
+# root = tkxui.Tk(display=tkxui.FRAMELESS)
 root = Tk()
+# root.center()
+root.resizable(False,False)
 root.title("YouTube Max Video Downloader")
 root.iconbitmap("tkinter practice/Youtube Downloader/favicon.ico")
 root.config(background="#267573")

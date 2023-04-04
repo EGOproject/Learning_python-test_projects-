@@ -69,6 +69,7 @@ radio.mainloop()
 #title -- title widget
 """
 root.title("actual title) names window title
+root.resizable(False,False)
 """
 #grid vs pack
 """

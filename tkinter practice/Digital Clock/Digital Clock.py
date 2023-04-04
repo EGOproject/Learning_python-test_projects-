@@ -9,6 +9,7 @@ from time import strftime
 root = Tk()
 root.title("Digital Clock")
 root.iconbitmap("tkinter practice/Digital Clock/favicon.ico")
+root.resizable(False,False)
 
 
 def time():

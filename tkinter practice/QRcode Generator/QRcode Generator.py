@@ -2,13 +2,10 @@
 #credits: EGOprojet
 
 from tkinter import *
-
+from tkinter.filedialog import *
 import pyqrcode
 from pyzbar.pyzbar import decode
 from PIL import Image
-
-qr = pyqrcode.create("Hello Python Guys")
-qr.png("myCode.png", scale=8)
 
 root = Tk()
 root.title("QRcode Generator")
@@ -22,6 +19,7 @@ def clear():
 def generate():
     qr = pyqrcode.create(content_screen.get())
     qr.png("QRCode.png", scale=8)
+    
 
 head_label = Label(root, text="Generate QRcode!", bg="#267573", fg="white").grid(row=0, column="0", columnspan=4, padx=10, pady=10)
 content_label = Label(root, text="Paste Content: ", bg="#267573", fg="white").grid(row=1, column="0", padx=10, pady=10)

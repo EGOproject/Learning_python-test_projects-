@@ -137,6 +137,10 @@ for the exit button
 
 --- to diable a button define its usual then mention the state as disabled
     button_quit = Button(root, text="Exit program", command=root.quit, state=DISABLED)
+
+---image buttons
+    play_button = PhotoImage(file="filename.extension")
+    Button(root, image=play_button).place(x,y)
 """
 
 #borders,allignment and apearance
@@ -153,8 +157,8 @@ for the exit button
 
 #frames -- used to organise content in the root 
 """
-frames =LabelFrame=(text="comment section", padx=1, pady=1)#this is the  space inside the frame
-frame.pack(padx=1, pady=1)#this is the space arouns the frames
+music_frame =LabelFrame=(root, bd=2, relief=RIDGE)#this is the  space inside the frame
+music_frame.pack(padx=400, pady=400, width=560, height=250 )#this is the space arouns the frames
 ---the tect section can be ignored when not needed
 """
 

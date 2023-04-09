@@ -14,9 +14,9 @@ root.resizable(False,False)
 root.iconbitmap("tkinter practice/music player/favicon.ico")
 root.config(background="#10004f")
 
-# mixer.init()
+mixer.init()
 
-frame =LabelFrame=(root, Text=="comment section")
-frame.grid(row=0, column=0, padx=1, pady=1)
+music_frame = Frame=(root, bd=2, relief=RIDGE)#this is the  space inside the frame
+music_frame.pack(padx=400, pady=400, width=560, height=250 )
 
 root.mainloop()

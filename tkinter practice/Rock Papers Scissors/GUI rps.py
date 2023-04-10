@@ -21,15 +21,6 @@ ubg = "#508705"
 engine = pyttsx3.init()
 engine.setProperty("rate", 150)
 
-global uw
-uw = 0
-global ul
-ul = 0
-global cw
-cw = 0
-global cl
-cl = 0
-
 def selection(uv):
     cv = random.choice([1,2,3])
     if uv == cv:

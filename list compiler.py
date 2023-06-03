@@ -14,7 +14,7 @@ def lm():
     dil = []
     def atl():
         while len(il) < mi:
-            pyttsx3.speak(f"Add new item to {ln}")
+            # pyttsx3.speak(f"Add new item to {ln}")
             ni = input(f"\nAdd new item to {ln} : ").upper()
             if ni not in il:
                     il.append(ni)

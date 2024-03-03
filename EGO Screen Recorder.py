@@ -11,13 +11,15 @@ class ScreenRecorder:
         self.root = tk.Tk()
         self.root.title("EGO SR")
         self.root.geometry("350x200")
+        self.root.config(background="#267573")
+        self.root.resizable(False,False)
 
         self.recording = False
         self.filename = ""
         self.frames = []
 
         # Styling
-        self.root.configure(bg="#f0f0f0")
+        self.root.configure(bg="#267573")
 
         self.header_label = tk.Label(self.root, text="EGO Screen Recorder", font=("Helvetica", 20), bg="#f0f0f0")
         self.header_label.pack(pady=20)

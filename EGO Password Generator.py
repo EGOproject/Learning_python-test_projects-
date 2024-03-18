@@ -6,7 +6,7 @@ import random
 upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 lower = "abcdefghijklmnopqrstuvwxyz"
 number = "0123456789"
-symbols = "!@#$%/\<>?:"
+symbols = "@!#$%/\<>?:"
 pform = upper + lower + number + symbols
 
 def gen():
